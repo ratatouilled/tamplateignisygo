@@ -1,0 +1,41 @@
+private MySqlConnection connection;
+private MySqlCommand command;
+public MainWindow()
+{
+    InitializeComponent();
+    conn();
+}
+
+private void gomb_Click(object sender, RoutedEventArgs e)
+{
+    UpdatePhoneNumber();
+}
+private void conn()
+{
+    string connectionString = "Server=localhost; Database=!!!!!!!; Uid=root; Pwd=;";
+    connection = new MySqlConnection(connectionString);
+    command = new MySqlCommand { Connection = connection };
+}
+private void UpdatePhoneNumber()
+{
+   
+    string !!!!!!!= bevisz.Text;
+    string !!!!!! = futarid.Text;
+
+
+    try
+    {
+        connection.Open();
+        command.CommandText = "UPDATE futar SET ftel = @!!!!! WHERE fazon = @!!!!!!";
+        command.Parameters.AddWithValue("@!!!!!!", !!!!!!);
+        command.Parameters.AddWithValue("@!!!!!", !!!!!);
+
+
+        
+    }
+    catch (MySqlException ex)
+    {
+        MessageBox.Show($"An error occurred: {ex.Message}");
+    }
+    
+}

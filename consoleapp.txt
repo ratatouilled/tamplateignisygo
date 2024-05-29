@@ -1,0 +1,38 @@
+string connString = "server=localhost; user=root; database=!!!!; password=;";
+MySqlConnection databaseconn = new MySqlConnection(connString);
+
+try
+{
+    databaseconn.Open();
+
+    
+    MySqlCommand lekerdezes1 = new MySqlCommand("SELECT COUNT(!!!!!!!) FROM !!!!!!", databaseconn);
+    Console.WriteLine("1. feladat: !!!!!!!!!!");
+    Console.WriteLine($"{lekerdezes1.ExecuteScalar()}");
+
+ 
+    MySqlCommand lekerdezes2 = new MySqlCommand("SELECT !!!!!, !!!!!!! FROM !!!!!!!", databaseconn);
+   
+    using (MySqlDataReader reader = lekerdezes2.ExecuteReader())
+    {
+        while (reader.Read())
+        {
+            string !!!! = reader.GetString("!!!!!!");
+            int !!!!! = reader.GetInt32("!!!!!");
+            Console.WriteLine($"{!!!!!}: {!!!!!}");
+        }
+    }
+
+
+
+    MySqlCommand lekerdezes3 = new MySqlCommand(
+        
+    Console.WriteLine("\n3. feladat: !!!!");
+    Console.WriteLine($"{lekerdezes3.ExecuteScalar()}");
+}
+catch (Exception ex)
+{
+    Console.WriteLine($"Hiba történt: {ex.Message}");
+}
+
+Console.ReadLine();
